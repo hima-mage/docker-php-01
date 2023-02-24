@@ -2,7 +2,8 @@ version: "3.0"
 services:
   #web-server
   web:
-    image: nginx:latest
+    build:
+      dockerfile: ./nginx/Dockerfile
     ports:
       - "80:80"
     volumes:
@@ -11,9 +12,6 @@ services:
   app:
     build:
       dockerfile: ./php/Dockerfile
-    volumes:
-      - /var/www/html/vendor
-      - ./app:/var/www/html
 
   #mysql
   db:
