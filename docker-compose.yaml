@@ -1,6 +1,11 @@
+version: "3.0"
 services:
   #web-server
   web:
     image: nginx:latest
     ports:
       - "80:80"
+
+  app:
+    build:
+      dockerfile: ./php/Dockerfile
